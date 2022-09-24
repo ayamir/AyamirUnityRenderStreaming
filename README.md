@@ -2,10 +2,10 @@
 
 <img src="https://img.shields.io/badge/unity-2019.4-green.svg?style=flat-square" alt="unity 2019.4"> <img src="https://img.shields.io/badge/unity-2020.3-green.svg?style=flat-square" alt="unity 2020.3">
 
-**Unity Render Streaming** is a solution that provides Unity's high quality rendering abilities via browser. It's designed to meet the needs of tasks like viewing car configurators or architectural models on mobile devices.  
-This solution's streaming technology takes advantage of [WebRTC](https://webrtc.org/), and developers can even use the [WebRTC package](https://docs.unity3d.com/Packages/com.unity.webrtc@latest) to create their own unique solutions. 
+**Unity Render Streaming** is a solution that provides Unity's high quality rendering abilities via browser. It's designed to meet the needs of tasks like viewing car configurators or architectural models on mobile devices.
+This solution's streaming technology takes advantage of [WebRTC](https://webrtc.org/), and developers can even use the [WebRTC package](https://docs.unity3d.com/Packages/com.unity.webrtc@latest) to create their own unique solutions.
 
-<img src="com.unity.renderstreaming/Documentation~/images/browser_hdrpscene.png" width=500 align=center>
+<img src="com.ayamir.renderstreaming/Documentation~/images/browser_hdrpscene.png" width=500 align=center>
 
 ## Requirements
 
@@ -20,20 +20,20 @@ Please see [Furioos Tutorial](com.unity.renderstreaming/Documentation~/deploy-to
 
 ### License
 
-- `com.unity.renderstreaming` -  [LICENSE.md](com.unity.renderstreaming/LICENSE.md)
+- `com.ayamir.renderstreaming` -  [LICENSE.md](com.ayamir.renderstreaming/LICENSE.md)
 
-- `com.unity.template.renderstreaming-hd` -  [LICENSE.md](com.unity.template.renderstreaming-hd/Packages/com.unity.template.renderstreaming-hd/LICENSE.md)
+- `com.ayamir.template.renderstreaming-hd` -  [LICENSE.md](com.ayamir.template.renderstreaming-hd/Packages/com.unity.template.renderstreaming-hd/LICENSE.md)
 
-- `com.unity.template.renderstreaming-rtx` -  [LICENSE.md](com.unity.template.renderstreaming-rtx/Packages/com.unity.template.renderstreaming-rtx/LICENSE.md)
+- `com.ayamir.template.renderstreaming-rtx` -  [LICENSE.md](com.ayamir.template.renderstreaming-rtx/Packages/com.unity.template.renderstreaming-rtx/LICENSE.md)
 
 ## Repository Structure
 
 ```
 <root>
 ├── BuildScripts~                          // Build scripts for CI system
-├── com.unity.renderstreaming              // Unity Render Streaming Package 
-├── com.unity.template.renderstreaming-hd  // HDRP template
-├── com.unity.template.renderstreaming-rtx // HDRP Raytracing template
+├── com.ayamir.renderstreaming              // Unity Render Streaming Package
+├── com.ayamir.template.renderstreaming-hd  // HDRP template
+├── com.ayamir.template.renderstreaming-rtx // HDRP Raytracing template
 ├── RenderStreaming~                       // Sample project for package
 └── WebApp                                 // Web application for signaling
 ```
