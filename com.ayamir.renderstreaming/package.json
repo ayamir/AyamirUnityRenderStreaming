@@ -1,0 +1,17 @@
+{
+  "name": "com.ayamir.renderstreaming",
+  "displayName": "Ayamir's Custom Unity Render Streaming",
+  "version": "3.1.0-exp.2",
+  "unity": "2019.4",
+  "description": "This is a package for using Unity Render Streaming technology. It contains two samples to use the technology.",
+  "dependencies": {
+    "com.unity.inputsystem": "1.0.2"
+  },
+  "samples": [
+    {
+      "displayName": "Example",
+      "description": "RenderStreaming sample",
+      "path": "Samples~/Example"
+    }
+  ]
+}
