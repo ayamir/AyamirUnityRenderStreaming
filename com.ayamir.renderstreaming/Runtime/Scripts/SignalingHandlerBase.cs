@@ -1,5 +1,6 @@
 using Unity.WebRTC;
 using UnityEngine;
+using System.Linq;
 
 namespace Unity.RenderStreaming
 {
@@ -67,6 +68,13 @@ namespace Unity.RenderStreaming
         public virtual void AddSender(string connectionId, IStreamSender sender)
         {
             var transceiver = m_handler.AddSenderTrack(connectionId, sender.Track);
+            var codecs = RTCRtpSender.GetCapabilities(TrackKind.Video).codecs;
+            var h264Codecs = codecs.Where(codec => codec.mimeType == "video/H264");
+            var error = transceiver.SetCodecPreferences(h264Codecs.ToArray());
+            if (error != RTCErrorType.None)
+                Debug.LogError("SetCodecPreferences to H264 failed!");
+            else
+                Debug.Log("SetCodecPreferences to H264 successfully!");
             sender.SetSender(connectionId, transceiver.Sender);
         }
 
