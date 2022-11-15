@@ -68,13 +68,16 @@ namespace Unity.RenderStreaming
         public virtual void AddSender(string connectionId, IStreamSender sender)
         {
             var transceiver = m_handler.AddSenderTrack(connectionId, sender.Track);
-            var codecs = RTCRtpSender.GetCapabilities(TrackKind.Video).codecs;
-            var h264Codecs = codecs.Where(codec => codec.mimeType == "video/H264");
-            var error = transceiver.SetCodecPreferences(h264Codecs.ToArray());
-            if (error != RTCErrorType.None)
-                Debug.LogError("SetCodecPreferences to H264 failed!");
-            else
-                Debug.Log("SetCodecPreferences to H264 successfully!");
+            if (sender.GetType() == typeof(VideoStreamSender))
+            {
+                var codecs = RTCRtpSender.GetCapabilities(TrackKind.Video).codecs;
+                var h264Codecs = codecs.Where(codec => codec.mimeType == "video/H264");
+                var error = transceiver.SetCodecPreferences(h264Codecs.ToArray());
+                if (error != RTCErrorType.None)
+                    Debug.LogError("SetCodecPreferences to H264 failed!");
+                else
+                    Debug.Log("SetCodecPreferences to H264 successfully!");
+            }
             sender.SetSender(connectionId, transceiver.Sender);
         }
 
@@ -87,7 +90,7 @@ namespace Unity.RenderStreaming
         {
             sender.Track.Stop();
             sender.SetSender(connectionId, null);
-            if(ExistConnection(connectionId))
+            if (ExistConnection(connectionId))
                 RemoveTrack(connectionId, sender.Track);
         }
 
@@ -122,7 +125,7 @@ namespace Unity.RenderStreaming
         /// <param name="channel"></param>
         public virtual void AddChannel(string connectionId, IDataChannel channel)
         {
-            if(channel.IsLocal)
+            if (channel.IsLocal)
             {
                 var _channel = m_handler.CreateChannel(connectionId, channel.Label);
                 channel.SetChannel(connectionId, _channel);
@@ -244,7 +247,7 @@ namespace Unity.RenderStreaming
         /// <summary>
         ///
         /// </summary>
-        bool IsConnected { get;  }
+        bool IsConnected { get; }
 
         /// <summary>
         ///
