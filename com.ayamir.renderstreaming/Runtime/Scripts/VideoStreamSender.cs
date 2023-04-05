@@ -53,5 +53,10 @@ namespace Unity.RenderStreaming
 
             sender.SetParameters(parameters);
         }
+
+        public Vector2Int GetStreamingSize()
+        {
+            return streamingSize;
+        }
     }
 }

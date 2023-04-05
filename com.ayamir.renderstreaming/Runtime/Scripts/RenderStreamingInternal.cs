@@ -533,7 +533,9 @@ namespace Unity.RenderStreaming
 
             RTCIceCandidateInit option = new RTCIceCandidateInit
             {
-                candidate = e.candidate, sdpMLineIndex = e.sdpMLineIndex, sdpMid = e.sdpMid
+                candidate = e.candidate,
+                sdpMLineIndex = e.sdpMLineIndex,
+                sdpMid = e.sdpMid
             };
 
             if (!pc.peer.AddIceCandidate(new RTCIceCandidate(option)) && !pc.ignoreOffer)
